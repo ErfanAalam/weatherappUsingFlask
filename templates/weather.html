@@ -10,26 +10,32 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <style>
+      .h-500{
+        height: 300px;
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-primary-subtle d-flex flex-column align-items-center">
     <h1>Weather App</h1>
     <form method="POST">
       <input type="text" name="city" placeholder="Enter city name" required />
       <button type="submit">Get Weather</button>
     </form>
+    <div class="border border-3 border-primary p-3 h-500 mt-3 d-flex flex-column align-items-center">
+      {% if data %}
+      <h2>Weather in {{ data.name }}</h2>
 
-    {% if data %}
-    <h2>Weather in {{ data.name }}</h2>
-
-    {% if data.main %}
-    <p>Temperature: {{ data.main.temp }} °C</p>
-    <p>Humidity: {{ data.main.humidity }}%</p>
-    {% endif %} {% if data.weather %}
-    <p>Weather: {{ data.weather[0].description }}</p>
-    {% endif %} {% if data.wind %}
-    <p>Wind Speed: {{ data.wind.speed }} m/s</p>
-    {% endif %} {% else %}
-    <p>No weather data available.</p>
-    {% endif %}
+      {% if data.main %}
+      <p>Temperature: {{ data.main.temp }} °C</p>
+      <p>Humidity: {{ data.main.humidity }}%</p>
+      {% endif %} {% if data.weather %}
+      <p>Weather: {{ data.weather[0].description }}</p>
+      {% endif %} {% if data.wind %}
+      <p>Wind Speed: {{ data.wind.speed }} m/s</p>
+      {% endif %} {% else %}
+      <p>No weather data available.</p>
+      {% endif %}
+    </div>
   </body>
 </html>
