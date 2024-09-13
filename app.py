@@ -8,9 +8,9 @@ def hello():
     data = None
     if request.method == "POST":
         city = request.form.get('city')
-        respose = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city},india&units=imperial&appid=d2a02760d2ef58d25d2c6e3f0fb2c70e")
+        response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city},india&units=imperial&appid=d2a02760d2ef58d25d2c6e3f0fb2c70e")
     
-        data = respose.json()
+        data = response.json()
     
     return render_template("weather.html", data=data)
 
