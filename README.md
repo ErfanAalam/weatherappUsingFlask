@@ -2,7 +2,7 @@
 
 ## weather app based on openweather api where the data is fetched from the api and displayed on the screen
 
-##Prerequisites
+## Prerequisites
  - Phython should be installed (upgraded version)
  - Git Installed for cloning the project (optional)
 
